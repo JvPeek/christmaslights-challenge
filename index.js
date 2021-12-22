@@ -1,7 +1,7 @@
 var e131 = require('e131');
 
-var client = new e131.Client('192.168.2.97');  // or use a universe
-var packet = client.createPacket(45*3);  // we want 8 RGB (x3) slots
+var client = new e131.Client('192.168.2.99');  // or use a universe
+var packet = client.createPacket(50*3);  // we want 8 RGB (x3) slots
 var slotsData = packet.getSlotsData();
 packet.setSourceName('test E1.31 client');
 packet.setUniverse(0x01);  // make universe number consistent with the client
