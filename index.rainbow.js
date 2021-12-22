@@ -2,7 +2,7 @@
  * simple example for an animation:
  * - the whole led strip will be filled with rainbow-colors
  * - 'offset' will be changed every loop, so that the rainbow circles through the strip
- * 
+ *
  * see the 'loop()' function for the 'effect' animation
  */
 
@@ -34,16 +34,16 @@ let delta = 360 / numberOfLeds; // delta to fill the whole strip with a rainbow
  * arduino like:
  * - loop runs forever
  * - use `await delay(100)` to wait for 100ms
- * 
+ *
  * add your fancy animation here
  */
 async function loop() {
   for (let i = 0; i < config.numberOfLeds; i++) {
-    colors[i] = hsv2rgb(currentColor, 100, 100);
-    currentColor = (currentColor + delta) % 360;
+    colors[i] = hsv2rgb(currentColor, 100, 100); // hsv-color value (hue, saturation, value) w/ max values (360,100,100)
+    currentColor = (currentColor + delta) % 360; // make the rainbow 
   }
-  await delay(20);
-  currentColor = currentColor - 10;
+  await delay(50); // wait 50 ms
+  currentColor = currentColor - 10; // next round: offset the current color to move the rainbow
 }
 
 // ---------------------------------------
@@ -65,7 +65,6 @@ function refreshColors() {
   });
 }
 refreshColors();
-
 
 /**
  * run the loop function forever and ever and ever and.... until we reached eternity
