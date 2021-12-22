@@ -6,11 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
+    "start.example": "node index.rainbow.js",
     "develop": "npx nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "color-convert": "^2.0.1",
     "dotenv": "^10.0.0",
     "e131": "^1.1.3"
   },
